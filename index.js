@@ -11,4 +11,9 @@ async function main() {
     name:String,
     age:Number,
     city:String
+
   })
+
+const User = mongoose.model('User',newSchema);
+
+const Employee = mongoose.model("Employee",newSchema);
