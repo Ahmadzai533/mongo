@@ -22,4 +22,15 @@ const user1 = new User({
   age: 23,
   city: " Nangrahar",
 });
-user1.save().then((res)=>{console.log(res)}).catch((err)=>{console.log(err)});
+const user2 = new User({
+  name: "Ali",
+  age: 25,
+  city: "Kabul",
+});
+// user1.save().then((res)=>{console.log(res)}).catch((err)=>{console.log(err)});
+// user2.save().then((res)=>{console.log(res)}).catch((err)=>{console.log(err)});
+User.insertMany([
+  {name:"ALi", age:"30", email:"ali@gmail.com"},
+  {name:"Ahmad", age:"34", email:"ahmad@gmail.com"},
+  {name:"Musa", age:"20", email:"Musa@gmail.com"}
+]).then((res)=>{console.log(res)})
