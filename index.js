@@ -37,7 +37,7 @@ User.insertMany([
   console.log(res);
 });
 
-User.findOneAndDelete({ age: { $gt: 30 } }).then((res) => {
+User.deleteMany({ age: { $gt: 15 } }).then((res) => {
   console.log(res);
 });
 
