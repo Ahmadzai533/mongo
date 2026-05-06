@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+  const mongoose = require("mongoose");
 main()
   .then(() => {
     console.log("connected seccessfully");
