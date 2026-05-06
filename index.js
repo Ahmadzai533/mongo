@@ -37,6 +37,14 @@ User.insertMany([
   console.log(res);
 });
 
+User.findByIdAndUpdate("69fa3e9f8af1dfb36a76f60e", { age: 30 }, { new: true })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 User.findById("69fa42ffc4f21851f544a420")
   .then((res) => {
     console.log(res);
