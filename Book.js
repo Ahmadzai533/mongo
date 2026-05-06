@@ -23,9 +23,9 @@ const bookSchema = new mongoose.Schema({
 const Book = mongoose.model("Book", bookSchema);
 
 let book1 = new Book({
-//   title: "The Harry potter and the philosopher's stone",
+  title: "The Harry potter and the philosopher's stone",
   aouthor: "J.K. Rowling",
-  price: 19.99,
+  price: "897",
 });
 
 book1
