@@ -18,21 +18,49 @@ const bookSchema = new mongoose.Schema({
   },
   price: {
     type: Number,
+    min: [1, "Price must be a positive number"],
+  },
+  discount: {
+    type: Number,
+    default: 0,
+  },
+  category: {
+    type: [String],
+    enum: ["fiction", "non-fiction"],
+  },
+  genre: {
+    type: [String],
+    enum: ["drama", "action", "comedy", "horror"],
   },
 });
+
 const Book = mongoose.model("Book", bookSchema);
 
-let book1 = new Book({
-  title: "The Harry potter and the philosopher's stone",
-  author: "J.K. Rowling",
-  price: "897",
-});
-
-book1
-  .save()
+Book.findByIdAndUpdate(
+  "69fba00ceeee3ab52b086c38",
+  { price: -500 },
+  { runValidators: true },
+)
   .then((res) => {
     console.log(res);
   })
   .catch((err) => {
-    console.log(err);
+    console.log(err.errors.price.message);
   });
+
+// let book1 = new Book({
+//   title: "The Harry potter and the philosopher's stone",
+//   author: "J.K. Rowling",
+//   price: "897",
+//   category: ["fiction"],
+//   genre: ["drama", "action", "comedy", "horror"],
+// });
+
+// book1
+//   .save()
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
